@@ -84,19 +84,8 @@ header button:hover {
   gap: 5%;
 }
 
-.frame {
-  left: 20px;
-  border: none;
-  width: 5rem;
-  background-color: white;
-  text-align: center;
-  font-weight: bold;
-  margin-top: 5%;
-  padding: 2% 4%;
-  border-radius: 20px;
-}
-
 .card {
+  position: relative;
   height: 30rem;
   width: 25rem;
   padding: 5%;
@@ -105,6 +94,20 @@ header button:hover {
   background-color: rgb(200, 255, 255);
   border-radius: 16px;
   grid-area: card;
+}
+
+.frame {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  border: none;
+  width: 5rem;
+  background-color: white;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 5%;
+  padding: 2% 4%;
+  border-radius: 20px;
 }
 
 .text {

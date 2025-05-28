@@ -18,6 +18,8 @@
     document.startViewTransition(() => {
       for (i = 0; i < x.length; i++) {
         removeClass(x[i], "show");
+
+        
         if (c === "" || x[i].className.indexOf(c) > -1) {
           addClass(x[i], "show");
         }
@@ -55,14 +57,21 @@
 
   for (var i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function () {
-      var current = document.getElementsByClassName("active");
+      var filter = this.getAttribute("data-filter");
+  
+      if (this.classList.contains("active")) {
+        this.classList.remove("active");
+        currentFilter = null;
+        filterSelection("all");
+      } else {
 
-      if (current.length > 0) {
-        current[0].className = current[0].className.replace(" active", "");
-      }
-
-      if (!this.classList.contains("active")) {
-        this.className += " active";
+        var current = document.getElementsByClassName("active");
+        if (current.length > 0) {
+          current[0].classList.remove("active");
+        }
+  
+        this.classList.add("active");
+        filterSelection(filter);
       }
     });
   }
