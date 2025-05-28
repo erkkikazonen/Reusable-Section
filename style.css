@@ -34,7 +34,7 @@ p {
     "header card card";
 } /* Add more template-areas, if more cards are added */
 
-@media only screen and (max-width: 1200px) {
+@media (max-width: 1200px) {
   .section {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
@@ -43,7 +43,7 @@ p {
   }
 }
 
-@media only screen and (max-width: 850px) {
+@media (max-width: 850px) {
   .section {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -57,7 +57,7 @@ header {
   grid-area: header;
 }
 
-@media only screen and (max-width: 850px) {
+@media (max-width: 850px) {
   header {
     width: 28rem;
   }

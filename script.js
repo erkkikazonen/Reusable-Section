@@ -3,7 +3,6 @@
 
   let currentFilter = null;
 
-
   window.filterSelection = function (c) {
     var x, i;
     x = document.getElementsByClassName("filterDiv");
