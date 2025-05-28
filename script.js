@@ -3,6 +3,7 @@
 
   let currentFilter = null;
 
+
   window.filterSelection = function (c) {
     var x, i;
     x = document.getElementsByClassName("filterDiv");
@@ -15,13 +16,15 @@
       currentFilter = c;
     }
 
-    for (i = 0; i < x.length; i++) {
-      removeClass(x[i], "show");
-      if(c === "" || x[i].className.indexOf(c) > -1) {
-        addClass(x[i], "show")
+    document.startViewTransition(() => {
+      for (i = 0; i < x.length; i++) {
+        removeClass(x[i], "show");
+        if (c === "" || x[i].className.indexOf(c) > -1) {
+          addClass(x[i], "show");
+        }
       }
-    }
-  }  
+    });
+  };
 
   function addClass(element, name) {
     var i, arr1, arr2;
@@ -54,6 +57,7 @@
   for (var i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function () {
       var current = document.getElementsByClassName("active");
+
       if (current.length > 0) {
         current[0].className = current[0].className.replace(" active", "");
       }
@@ -69,5 +73,5 @@
     for (var i = 0; i < x.length; i++) {
       addClass(x[i], "show");
     }
-  })
+  });
 })();

@@ -9,18 +9,17 @@
 }
 
 @font-face {
-  font-family: 'Open Sans Variable';
-  src: url('./assets/OpenSans-VariableFont.ttf');
-
+  font-family: "Open Sans Variable";
+  src: url("./assets/OpenSans-VariableFont.ttf");
 }
 
 h2 {
   margin-bottom: 5%;
-  font-family: 'Open Sans Variable';
+  font-family: "Open Sans Variable";
 }
 
 p {
-  font-family: 'Open Sans Variable';
+  font-family: "Open Sans Variable";
 }
 
 .section {
@@ -38,23 +37,30 @@ p {
 @media only screen and (max-width: 1200px) {
   .section {
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "header card";
+    grid-template-areas:
+      "header header"
+      "card card";
   }
 }
 
 @media only screen and (max-width: 850px) {
   .section {
     grid-template-columns: 1fr;
-    grid-template-areas: 
+    grid-template-areas:
       "header"
       "card";
   }
 }
 
 header {
-  width: 26rem;
   padding: 5%;
   grid-area: header;
+}
+
+@media only screen and (max-width: 850px) {
+  header {
+    width: 28rem;
+  }
 }
 
 button {
@@ -66,6 +72,7 @@ button {
   margin-top: 5%;
   padding: 2% 4%;
   border-radius: 20px;
+  cursor: pointer;
 }
 header button:hover {
   background-color: rgb(0, 125, 255, 0.75);
@@ -78,17 +85,15 @@ header button:hover {
 }
 
 .frame {
+  left: 20px;
   border: none;
+  width: 5rem;
   background-color: white;
   text-align: center;
   font-weight: bold;
   margin-top: 5%;
   padding: 2% 4%;
   border-radius: 20px;
-}
-
-.frame:hover {
-  color: rgba(0, 0, 0, 0.5);
 }
 
 .card {
@@ -100,6 +105,13 @@ header button:hover {
   background-color: rgb(200, 255, 255);
   border-radius: 16px;
   grid-area: card;
+}
+
+.text {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 img {
