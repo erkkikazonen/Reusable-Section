@@ -3,25 +3,25 @@
 
   let currentFilter = null;
 
-  window.filterSelection = function (c) {
-    var x, i;
-    x = document.getElementsByClassName("filterDiv");
-    if (c == "all") c = "";
+  window.filterSelection = function (category) {
+    var cards, i;
+    cards = document.getElementsByClassName("filterDiv");
+    if (category == "all") category = "";
 
-    if (currentFilter === c) {
-      c = "";
+    if (currentFilter === category) {
+      category = "";
       currentFilter = null;
     } else {
-      currentFilter = c;
+      currentFilter = category;
     }
 
     document.startViewTransition(() => {
-      for (i = 0; i < x.length; i++) {
-        removeClass(x[i], "show");
+      for (i = 0; i < cards.length; i++) {
+        removeClass(cards[i], "show");
 
         
-        if (c === "" || x[i].className.indexOf(c) > -1) {
-          addClass(x[i], "show");
+        if (category === "" || cards[i].className.indexOf(category) > -1) {
+          addClass(cards[i], "show");
         }
       }
     });
@@ -77,9 +77,9 @@
   }
 
   window.addEventListener("DOMContentLoaded", () => {
-    var x = document.getElementsByClassName("filterDiv");
-    for (var i = 0; i < x.length; i++) {
-      addClass(x[i], "show");
+    var cards = document.getElementsByClassName("filterDiv");
+    for (var i = 0; i < cards.length; i++) {
+      addClass(cards[i], "show");
     }
   });
 })();
