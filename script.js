@@ -77,7 +77,7 @@
   }
 
   window.addEventListener("DOMContentLoaded", () => {
-    var cards = document.getElementsByClassName("filterDiv");
+    const cards = document.getElementsByClassName("filterDiv");
     for (var i = 0; i < cards.length; i++) {
       addClass(cards[i], "show");
     }
